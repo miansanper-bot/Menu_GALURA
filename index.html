@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GALURA – Menú Principal</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@700;800&display=swap"
+    rel="stylesheet" />
   <style>
     :root {
       --bg: #f0f4ff;
       --card-radius: 20px;
-      --shadow: 0 8px 32px rgba(60,60,120,0.13);
-      --lengua: #ff6b6b;
+      --shadow: 0 8px 32px rgba(60, 60, 120, 0.13);
       --lengua-light: #fff0f0;
-      --mates: #4ecdc4;
+      --lengua: #ff6b6b;
       --mates-light: #edfaf9;
-      --custom: #f7b731;
+      --mates: #4ecdc4;
       --custom-light: #fffbea;
+      --custom: #f7b731;
       --footer: #3a3a6e;
       --text: #22223b;
       --muted: #7b7b9c;
-      --add-btn: #6c63ff;
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       min-height: 100vh;
@@ -33,33 +41,41 @@
       flex-direction: column;
     }
 
-    /* ── HEADER ─────────────────────────────────── */
+    /* HEADER */
     header {
       text-align: center;
       padding: 44px 20px 20px;
-      position: relative;
     }
-    header .logo-ring {
+
+    .logo-ring {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 90px; height: 90px;
+      width: 90px;
+      height: 90px;
       border-radius: 50%;
       background: linear-gradient(135deg, #ff6b6b, #6c63ff, #4ecdc4);
-      box-shadow: 0 6px 24px rgba(108,99,255,0.28);
+      box-shadow: 0 6px 24px rgba(108, 99, 255, 0.28);
       margin-bottom: 16px;
       animation: spin-ring 8s linear infinite;
     }
+
     @keyframes spin-ring {
-      from { filter: hue-rotate(0deg); }
-      to   { filter: hue-rotate(360deg); }
+      from {
+        filter: hue-rotate(0deg);
+      }
+
+      to {
+        filter: hue-rotate(360deg);
+      }
     }
-    header .logo-ring span {
+
+    .logo-ring span {
       font-family: 'Baloo 2', cursive;
       font-size: 2rem;
       color: #fff;
-      letter-spacing: -1px;
     }
+
     header h1 {
       font-family: 'Baloo 2', cursive;
       font-size: clamp(2rem, 6vw, 3.2rem);
@@ -67,13 +83,14 @@
       color: var(--footer);
       letter-spacing: -1px;
     }
+
     header p.subtitle {
       color: var(--muted);
       font-size: 1.05rem;
       margin-top: 6px;
     }
 
-    /* ── MAIN ───────────────────────────────────── */
+    /* MAIN */
     main {
       flex: 1;
       max-width: 900px;
@@ -85,7 +102,7 @@
       gap: 36px;
     }
 
-    /* ── SECTION BLOCK ──────────────────────────── */
+    /* SECTION BLOCK */
     .section-block {
       background: #fff;
       border-radius: 28px;
@@ -93,17 +110,28 @@
       box-shadow: var(--shadow);
       position: relative;
       overflow: hidden;
-      transition: transform .2s;
     }
+
     .section-block::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 6px;
     }
-    .section-block.lengua::before { background: linear-gradient(90deg, #ff6b6b, #ff8e53); }
-    .section-block.mates::before  { background: linear-gradient(90deg, #4ecdc4, #45b7d1); }
-    .section-block.custom::before { background: linear-gradient(90deg, #f7b731, #f0932b); }
+
+    .section-block.lengua::before {
+      background: linear-gradient(90deg, #ff6b6b, #ff8e53);
+    }
+
+    .section-block.mates::before {
+      background: linear-gradient(90deg, #4ecdc4, #45b7d1);
+    }
+
+    .section-block.custom::before {
+      background: linear-gradient(90deg, #f7b731, #f0932b);
+    }
 
     .section-title {
       display: flex;
@@ -111,16 +139,29 @@
       gap: 12px;
       margin-bottom: 20px;
     }
+
     .section-icon {
-      width: 46px; height: 46px;
+      width: 46px;
+      height: 46px;
       border-radius: 14px;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 1.5rem;
       flex-shrink: 0;
     }
-    .lengua .section-icon { background: var(--lengua-light); }
-    .mates  .section-icon { background: var(--mates-light); }
-    .custom .section-icon { background: var(--custom-light); }
+
+    .lengua .section-icon {
+      background: var(--lengua-light);
+    }
+
+    .mates .section-icon {
+      background: var(--mates-light);
+    }
+
+    .custom .section-icon {
+      background: var(--custom-light);
+    }
 
     .section-title h2 {
       font-family: 'Baloo 2', cursive;
@@ -129,7 +170,7 @@
       color: var(--text);
     }
 
-    /* ── CARDS GRID ─────────────────────────────── */
+    /* CARDS */
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -147,584 +188,200 @@
       font-size: 0.95rem;
       color: var(--text);
       transition: transform .18s, box-shadow .18s, background .18s;
-      position: relative;
       border: 2px solid transparent;
-      cursor: pointer;
     }
+
     .app-card:hover {
       transform: translateY(-4px) scale(1.02);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.13);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.13);
     }
-    .lengua .app-card { background: var(--lengua-light); border-color: #ffd0d0; }
-    .lengua .app-card:hover { background: #ffe0e0; border-color: var(--lengua); }
-    .mates  .app-card { background: var(--mates-light); border-color: #c6f2ef; }
-    .mates  .app-card:hover { background: #d8faf8; border-color: var(--mates); }
-    .custom .app-card { background: var(--custom-light); border-color: #ffe799; }
-    .custom .app-card:hover { background: #fff3bf; border-color: var(--custom); }
 
-    .app-card .card-emoji {
+    .lengua .app-card {
+      background: var(--lengua-light);
+      border-color: #ffd0d0;
+    }
+
+    .lengua .app-card:hover {
+      background: #ffe0e0;
+      border-color: var(--lengua);
+    }
+
+    .mates .app-card {
+      background: var(--mates-light);
+      border-color: #c6f2ef;
+    }
+
+    .mates .app-card:hover {
+      background: #d8faf8;
+      border-color: var(--mates);
+    }
+
+    .custom .app-card {
+      background: var(--custom-light);
+      border-color: #ffe799;
+    }
+
+    .custom .app-card:hover {
+      background: #fff3bf;
+      border-color: var(--custom);
+    }
+
+    .card-emoji {
       font-size: 1.6rem;
       flex-shrink: 0;
     }
-    .app-card .card-label { line-height: 1.3; }
-    .app-card .card-arrow {
+
+    .card-label {
+      line-height: 1.3;
+    }
+
+    .card-arrow {
       margin-left: auto;
       opacity: 0;
       font-size: 1.1rem;
       transition: opacity .2s, transform .2s;
     }
-    .app-card:hover .card-arrow { opacity: 1; transform: translateX(4px); }
 
-    /* ── ADD / MANAGE BUTTON ────────────────────── */
-    .manage-btn {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: none;
-      border: 2px dashed #c0c0e0;
-      color: var(--muted);
-      font-family: 'Nunito', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 700;
-      padding: 10px 18px;
-      border-radius: 14px;
-      cursor: pointer;
-      margin-top: 14px;
-      transition: border-color .2s, color .2s, background .2s;
-    }
-    .manage-btn:hover {
-      border-color: var(--add-btn);
-      color: var(--add-btn);
-      background: #f0eeff;
+    .app-card:hover .card-arrow {
+      opacity: 1;
+      transform: translateX(4px);
     }
 
-    /* ── ADD NEW SECTION BUTTON ─────────────────── */
-    .add-section-wrap {
-      text-align: center;
-    }
-    .add-section-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: linear-gradient(135deg, #6c63ff, #48c6ef);
-      color: #fff;
-      border: none;
-      border-radius: 50px;
-      padding: 14px 32px;
-      font-family: 'Nunito', sans-serif;
-      font-size: 1rem;
-      font-weight: 800;
-      cursor: pointer;
-      box-shadow: 0 6px 20px rgba(108,99,255,0.3);
-      transition: transform .18s, box-shadow .18s;
-    }
-    .add-section-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 28px rgba(108,99,255,0.4);
-    }
-
-    /* ── MODAL ──────────────────────────────────── */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(34,34,59,0.55);
-      backdrop-filter: blur(4px);
-      z-index: 100;
-      align-items: center;
-      justify-content: center;
-    }
-    .modal-overlay.open { display: flex; }
-
-    .modal {
-      background: #fff;
-      border-radius: 24px;
-      padding: 36px 32px 28px;
-      width: min(480px, 94vw);
-      box-shadow: 0 20px 60px rgba(34,34,59,0.25);
-      position: relative;
-      animation: modal-in .25s ease;
-    }
-    @keyframes modal-in {
-      from { transform: scale(.92); opacity: 0; }
-      to   { transform: scale(1);   opacity: 1; }
-    }
-    .modal h3 {
-      font-family: 'Baloo 2', cursive;
-      font-size: 1.4rem;
-      margin-bottom: 22px;
-      color: var(--footer);
-    }
-    .modal label {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--muted);
-      margin-bottom: 5px;
-      margin-top: 14px;
-    }
-    .modal input, .modal select {
-      width: 100%;
-      padding: 11px 14px;
-      border: 2px solid #e0e0f0;
-      border-radius: 12px;
-      font-family: 'Nunito', sans-serif;
-      font-size: 0.95rem;
-      color: var(--text);
-      outline: none;
-      transition: border-color .2s;
-    }
-    .modal input:focus, .modal select:focus { border-color: var(--add-btn); }
-    .modal-actions {
-      display: flex;
-      gap: 10px;
-      margin-top: 24px;
-    }
-    .btn-save {
-      flex: 1;
-      padding: 12px;
-      background: var(--add-btn);
-      color: #fff;
-      border: none;
-      border-radius: 14px;
-      font-family: 'Nunito', sans-serif;
-      font-size: 1rem;
-      font-weight: 800;
-      cursor: pointer;
-      transition: background .2s;
-    }
-    .btn-save:hover { background: #5650d9; }
-    .btn-cancel {
-      flex: 1;
-      padding: 12px;
-      background: #f0f0f8;
-      color: var(--muted);
-      border: none;
-      border-radius: 14px;
-      font-family: 'Nunito', sans-serif;
-      font-size: 1rem;
-      font-weight: 800;
-      cursor: pointer;
-    }
-    .btn-cancel:hover { background: #e4e4f4; }
-    .modal-close {
-      position: absolute;
-      top: 16px; right: 16px;
-      background: #f0f0f8;
-      border: none;
-      border-radius: 50%;
-      width: 34px; height: 34px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      color: var(--muted);
-      display: flex; align-items: center; justify-content: center;
-    }
-    .modal-close:hover { background: #e0e0f0; }
-
-    /* ── DELETE BUTTON ON CARD ──────────────────── */
-    .card-delete {
-      position: absolute;
-      top: 6px; right: 6px;
-      background: rgba(255,255,255,0.7);
-      border: none;
-      border-radius: 50%;
-      width: 22px; height: 22px;
-      font-size: 0.75rem;
-      cursor: pointer;
-      color: #cc0000;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      line-height: 1;
-    }
-    .edit-mode .card-delete { display: flex; }
-    .edit-mode .app-card { opacity: 0.9; }
-
-    /* ── FOOTER ─────────────────────────────────── */
+    /* FOOTER */
     footer {
       background: var(--footer);
-      color: rgba(255,255,255,0.75);
+      color: rgba(255, 255, 255, 0.75);
       text-align: center;
       padding: 18px 20px;
       font-size: 0.88rem;
       font-weight: 600;
       letter-spacing: 0.02em;
     }
-    footer span { color: #fff; }
 
-    /* ── PASSWORD MODAL ─────────────────────────── */
-    .pwd-modal {
-      background: #fff;
-      border-radius: 24px;
-      padding: 36px 32px 28px;
-      width: min(380px, 94vw);
-      box-shadow: 0 20px 60px rgba(34,34,59,0.25);
-      position: relative;
-      animation: modal-in .25s ease;
-      text-align: center;
-    }
-    .pwd-modal .lock-icon {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-    }
-    .pwd-modal h3 {
-      font-family: 'Baloo 2', cursive;
-      font-size: 1.3rem;
-      color: var(--footer);
-      margin-bottom: 6px;
-    }
-    .pwd-modal p {
-      color: var(--muted);
-      font-size: 0.88rem;
-      margin-bottom: 18px;
-    }
-    .pwd-modal input {
-      width: 100%;
-      padding: 11px 14px;
-      border: 2px solid #e0e0f0;
-      border-radius: 12px;
-      font-family: 'Nunito', sans-serif;
-      font-size: 1rem;
-      color: var(--text);
-      outline: none;
-      text-align: center;
-      letter-spacing: 2px;
-      transition: border-color .2s;
-    }
-    .pwd-modal input:focus { border-color: var(--add-btn); }
-    .pwd-modal input.error { border-color: #ff6b6b; animation: shake .3s; }
-    @keyframes shake {
-      0%,100% { transform: translateX(0); }
-      25%      { transform: translateX(-6px); }
-      75%      { transform: translateX(6px); }
-    }
-    .pwd-modal .pwd-actions {
-      display: flex;
-      gap: 10px;
-      margin-top: 18px;
-    }
-    .pwd-error {
-      color: #cc0000;
-      font-size: 0.82rem;
-      margin-top: 8px;
-      min-height: 18px;
+    footer span {
+      color: #fff;
     }
 
-    /* ── RESPONSIVE ─────────────────────────────── */
     @media (max-width: 480px) {
-      .section-block { padding: 22px 16px 18px; }
-      .cards-grid { grid-template-columns: 1fr; }
+      .section-block {
+        padding: 22px 16px 18px;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- HEADER -->
-<header>
-  <div class="logo-ring"><span>G</span></div>
-  <h1>GALURA</h1>
-  <p class="subtitle">Selecciona una actividad para comenzar</p>
-</header>
+  <header>
+    <div class="logo-ring"><span>G</span></div>
+    <h1>GALURA</h1>
+    <p class="subtitle">Selecciona una actividad para comenzar</p>
+  </header>
 
-<!-- MAIN -->
-<main id="main-content"></main>
+  <main id="main-content"></main>
 
-<!-- ADD NEW SECTION BUTTON -->
-<div class="add-section-wrap" style="padding-bottom:40px;">
-  <button class="add-section-btn" onclick="openModal('section')">
-    ➕ Añadir nueva sección
-  </button>
-</div>
+  <footer>
+    <span>GALURA &amp; Santana.</span> Todos los derechos reservados.
+  </footer>
 
-<!-- FOOTER -->
-<footer>
-  <span>GALURA &amp; Santana.</span> Todos los derechos reservados.
-</footer>
+  <script>
+    // ==========================================================
+    //  DATOS DEL MENÚ — edita aquí para añadir o modificar
+    // ==========================================================
+    //
+    //  Cada sección tiene:
+    //    id    → identificador único (sin espacios ni tildes)
+    //    title → nombre visible en pantalla
+    //    emoji → icono de la sección
+    //    type  → color: "lengua" (rojo) | "mates" (verde) | "custom" (amarillo)
+    //    apps  → lista de aplicaciones
+    //
+    //  Cada aplicación tiene:
+    //    emoji → icono
+    //    label → nombre visible
+    //    url   → enlace completo a GitHub Pages
+    //
+    // Para AÑADIR una nueva sección: copia un bloque { id, title... }
+    // y pégalo dentro del array, separado por coma.
+    //
+    // Para AÑADIR una app dentro de una sección: añade una línea
+    // { emoji: '🎯', label: 'Nombre', url: 'https://...' }
+    // dentro del array "apps" de esa sección.
+    //
+    // ==========================================================
 
-<!-- PASSWORD MODAL -->
-<div class="modal-overlay" id="pwd-overlay">
-  <div class="pwd-modal">
-    <div class="lock-icon">🔐</div>
-    <h3>Zona de administración</h3>
-    <p>Introduce la clave para continuar</p>
-    <input id="pwd-input" type="password" placeholder="••••••••"
-      onkeydown="if(event.key==='Enter')checkPassword()" autocomplete="off" />
-    <div class="pwd-error" id="pwd-error"></div>
-    <div class="pwd-actions">
-      <button class="btn-cancel" onclick="closePwd()">Cancelar</button>
-      <button class="btn-save" onclick="checkPassword()">Entrar</button>
+    const SECCIONES = [
+      {
+        id: 'lengua',
+        title: 'Lengua',
+        emoji: '📚',
+        type: 'lengua',
+        apps: [
+          { emoji: '🔵', label: 'Globos Lecto', url: 'https://miansanper-bot.github.io/globos-lecto/' },
+          { emoji: '🔤', label: 'Fonológico-Silábico', url: 'https://miansanper-bot.github.io/FONOLOGICO-SILABICO/' }
+        ]
+      },
+      {
+        id: 'mates',
+        title: 'Matemáticas',
+        emoji: '🔢',
+        type: 'mates',
+        apps: [
+          { emoji: '➕', label: 'Suma ABN', url: 'https://miansanper-bot.github.io/Suma-ABN/' },
+          { emoji: '➖', label: 'Resta ABN', url: 'https://miansanper-bot.github.io/Resta-ABN/' },
+          { emoji: '✖️', label: 'Multiplicación & División', url: 'https://miansanper-bot.github.io/MultiDivi-ABN/' },
+          { emoji: '🎮', label: 'Juegos Multipl./Divis.', url: 'https://miansanper-bot.github.io/Juego-MultiDivi-ABN/' }
+        ]
+      }
+      // Ejemplo de nueva sección (descomenta y edita):
+      // ,{
+      //   id: 'ingles',
+      //   title: 'Inglés',
+      //   emoji: '🌍',
+      //   type: 'custom',
+      //   apps: [
+      //     { emoji: '🎧', label: 'Listening Game', url: 'https://...' }
+      //   ]
+      // }
+    ];
+
+    // ==========================================================
+    //  RENDER — no es necesario editar nada a partir de aquí
+    // ==========================================================
+    const container = document.getElementById('main-content');
+
+    SECCIONES.forEach(sec => {
+      const block = document.createElement('div');
+      block.className = `section-block ${sec.type}`;
+      block.innerHTML = `
+    <div class="section-title">
+      <div class="section-icon">${sec.emoji}</div>
+      <h2>${sec.title}</h2>
     </div>
-  </div>
-</div>
+    <div class="cards-grid" id="grid-${sec.id}"></div>
+  `;
+      container.appendChild(block);
 
-<!-- MODAL -->
-<div class="modal-overlay" id="modal-overlay">
-  <div class="modal" id="modal-box">
-    <button class="modal-close" onclick="closeModal()">✕</button>
-    <h3 id="modal-title">Añadir aplicación</h3>
-    <div id="modal-body"></div>
-    <div class="modal-actions">
-      <button class="btn-cancel" onclick="closeModal()">Cancelar</button>
-      <button class="btn-save" id="modal-save" onclick="saveModal()">Guardar</button>
-    </div>
-  </div>
-</div>
-
-<script>
-// ── PASSWORD GUARD ─────────────────────────────────────────────────
-const PASSWORD = 'DonBosco';
-let pwdCallback = null;
-
-function requirePassword(callback) {
-  pwdCallback = callback;
-  const overlay = document.getElementById('pwd-overlay');
-  const input   = document.getElementById('pwd-input');
-  const err     = document.getElementById('pwd-error');
-  input.value = '';
-  err.textContent = '';
-  input.classList.remove('error');
-  overlay.classList.add('open');
-  setTimeout(() => input.focus(), 80);
-}
-
-function checkPassword() {
-  const input = document.getElementById('pwd-input');
-  const err   = document.getElementById('pwd-error');
-  if (input.value === PASSWORD) {
-    document.getElementById('pwd-overlay').classList.remove('open');
-    err.textContent = '';
-    if (pwdCallback) { pwdCallback(); pwdCallback = null; }
-  } else {
-    input.classList.remove('error');
-    void input.offsetWidth; // reflow to re-trigger animation
-    input.classList.add('error');
-    err.textContent = '❌ Clave incorrecta. Inténtalo de nuevo.';
-    input.value = '';
-  }
-}
-
-function closePwd() {
-  document.getElementById('pwd-overlay').classList.remove('open');
-  pwdCallback = null;
-}
-document.getElementById('pwd-overlay').addEventListener('click', function(e){
-  if (e.target === this) closePwd();
-});
-
-// ── DATA ──────────────────────────────────────────────────────────
-const STORAGE_KEY = 'galura_menu_v1';
-
-const defaultData = {
-  sections: [
-    {
-      id: 'lengua',
-      title: 'Lengua',
-      emoji: '📚',
-      type: 'lengua',
-      apps: [
-        { id: 'g1', emoji: '🔵', label: 'Globos Lecto', url: 'https://miansanper-bot.github.io/globoslecto/' },
-        { id: 'g2', emoji: '🔤', label: 'Fonológico-Silábico', url: 'https://miansanper-bot.github.io/FONOLOGICO-SILABICO/' }
-      ]
-    },
-    {
-      id: 'mates',
-      title: 'Matemáticas',
-      emoji: '🔢',
-      type: 'mates',
-      apps: [
-        { id: 'm1', emoji: '➕', label: 'Suma ABN',           url: 'https://miansanper-bot.github.io/SumaABN/' },
-        { id: 'm2', emoji: '➖', label: 'Resta ABN',          url: 'https://miansanper-bot.github.io/RestaABN/' },
-        { id: 'm3', emoji: '✖️', label: 'Multiplicación & División', url: 'https://miansanper-bot.github.io/MultiDiviABN/' },
-        { id: 'm4', emoji: '🎮', label: 'Juegos Multipl./Divis.', url: 'https://miansanper-bot.github.io/JuegoMultiDivi-ABN/' }
-      ]
-    }
-  ]
-};
-
-function loadData() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? JSON.parse(raw) : JSON.parse(JSON.stringify(defaultData));
-  } catch { return JSON.parse(JSON.stringify(defaultData)); }
-}
-function saveData(data) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-}
-
-let data = loadData();
-
-// ── RENDER ─────────────────────────────────────────────────────────
-function render() {
-  const container = document.getElementById('main-content');
-  container.innerHTML = '';
-
-  data.sections.forEach((sec, si) => {
-    const block = document.createElement('div');
-    block.className = `section-block ${sec.type}`;
-
-    // Section header
-    block.innerHTML = `
-      <div class="section-title">
-        <div class="section-icon">${sec.emoji}</div>
-        <h2>${sec.title}</h2>
-      </div>
-      <div class="cards-grid" id="grid-${sec.id}"></div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;">
-        <button class="manage-btn" onclick="openModal('app','${sec.id}')">
-          ＋ Añadir aplicación
-        </button>
-        <button class="manage-btn" style="border-color:#ffb3b3;color:#cc4444;" onclick="deleteSection('${sec.id}')">
-          🗑 Eliminar sección
-        </button>
-      </div>
+      const grid = block.querySelector(`#grid-${sec.id}`);
+      sec.apps.forEach(app => {
+        const a = document.createElement('a');
+        a.href = app.url;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.className = 'app-card';
+        a.innerHTML = `
+      <span class="card-emoji">${app.emoji}</span>
+      <span class="card-label">${app.label}</span>
+      <span class="card-arrow">→</span>
     `;
-    container.appendChild(block);
-
-    const grid = block.querySelector(`#grid-${sec.id}`);
-    sec.apps.forEach((app, ai) => {
-      const card = document.createElement('a');
-      card.href = app.url;
-      card.target = '_blank';
-      card.rel = 'noopener';
-      card.className = 'app-card';
-      card.innerHTML = `
-        <span class="card-emoji">${app.emoji}</span>
-        <span class="card-label">${app.label}</span>
-        <span class="card-arrow">→</span>
-        <button class="card-delete" title="Eliminar" onclick="deleteApp(event,'${sec.id}','${app.id}')">✕</button>
-      `;
-      grid.appendChild(card);
+        grid.appendChild(a);
+      });
     });
-  });
-}
-
-// ── DELETE ─────────────────────────────────────────────────────────
-function deleteApp(e, secId, appId) {
-  e.preventDefault(); e.stopPropagation();
-  requirePassword(() => {
-    if (!confirm('¿Eliminar esta aplicación?')) return;
-    const sec = data.sections.find(s => s.id === secId);
-    if (sec) sec.apps = sec.apps.filter(a => a.id !== appId);
-    saveData(data);
-    render();
-  });
-}
-function deleteSection(secId) {
-  requirePassword(() => {
-    if (!confirm('¿Eliminar esta sección y todas sus aplicaciones?')) return;
-    data.sections = data.sections.filter(s => s.id !== secId);
-    saveData(data);
-    render();
-  });
-}
-
-// ── MODAL ──────────────────────────────────────────────────────────
-let modalMode = null;
-let modalSecId = null;
-
-const SECTION_TYPES = ['lengua','mates','custom'];
-const SECTION_TYPE_LABELS = { lengua: 'Lengua (rojo)', mates: 'Mates (verde)', custom: 'Personalizado (amarillo)' };
-const EMOJIS = ['📚','🔢','🎯','🌟','🎨','🎮','🔤','🔵','➕','➖','✖️','📝','🧠','🎵','🌍'];
-
-function openModal(mode, secId) {
-  requirePassword(() => _openModal(mode, secId));
-}
-
-function _openModal(mode, secId) {
-  modalMode = mode;
-  modalSecId = secId || null;
-
-  const overlay = document.getElementById('modal-overlay');
-  const title   = document.getElementById('modal-title');
-  const body    = document.getElementById('modal-body');
-
-  if (mode === 'app') {
-    title.textContent = 'Añadir aplicación';
-    body.innerHTML = `
-      <label>Nombre de la aplicación</label>
-      <input id="f-label" type="text" placeholder="Ej: Suma ABN" />
-      <label>URL de GitHub Pages</label>
-      <input id="f-url" type="url" placeholder="https://usuario.github.io/repo/" />
-      <label>Emoji</label>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;" id="emoji-picker">
-        ${EMOJIS.map(e=>`<button type="button" class="emoji-opt" onclick="pickEmoji(this,'${e}')"
-          style="font-size:1.5rem;background:#f5f5ff;border:2px solid transparent;border-radius:10px;
-          width:42px;height:42px;cursor:pointer;transition:.15s;">${e}</button>`).join('')}
-      </div>
-      <input id="f-emoji" type="hidden" value="${EMOJIS[0]}" />
-    `;
-    // pre-select first
-    setTimeout(() => {
-      const first = document.querySelector('.emoji-opt');
-      if (first) first.style.borderColor = '#6c63ff';
-    }, 10);
-  } else {
-    title.textContent = 'Añadir nueva sección';
-    body.innerHTML = `
-      <label>Nombre de la sección</label>
-      <input id="f-sec-title" type="text" placeholder="Ej: Inglés" />
-      <label>Emoji de la sección</label>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;" id="emoji-picker">
-        ${EMOJIS.map(e=>`<button type="button" class="emoji-opt" onclick="pickEmoji(this,'${e}')"
-          style="font-size:1.5rem;background:#f5f5ff;border:2px solid transparent;border-radius:10px;
-          width:42px;height:42px;cursor:pointer;transition:.15s;">${e}</button>`).join('')}
-      </div>
-      <input id="f-sec-emoji" type="hidden" value="${EMOJIS[0]}" />
-      <label>Color de la sección</label>
-      <select id="f-sec-type">
-        ${SECTION_TYPES.map(t=>`<option value="${t}">${SECTION_TYPE_LABELS[t]}</option>`).join('')}
-      </select>
-    `;
-    setTimeout(() => {
-      const first = document.querySelector('.emoji-opt');
-      if (first) first.style.borderColor = '#6c63ff';
-    }, 10);
-  }
-
-  overlay.classList.add('open');
-}
-
-function pickEmoji(btn, emoji) {
-  document.querySelectorAll('.emoji-opt').forEach(b => b.style.borderColor = 'transparent');
-  btn.style.borderColor = '#6c63ff';
-  const hiddenId = modalMode === 'app' ? 'f-emoji' : 'f-sec-emoji';
-  document.getElementById(hiddenId).value = emoji;
-}
-
-function closeModal() {
-  document.getElementById('modal-overlay').classList.remove('open');
-  modalMode = null; modalSecId = null;
-}
-
-function uid() { return 'id' + Math.random().toString(36).slice(2,8); }
-
-function saveModal() {
-  if (modalMode === 'app') {
-    const label = document.getElementById('f-label').value.trim();
-    const url   = document.getElementById('f-url').value.trim();
-    const emoji = document.getElementById('f-emoji').value;
-    if (!label || !url) { alert('Por favor rellena nombre y URL.'); return; }
-    const sec = data.sections.find(s => s.id === modalSecId);
-    if (sec) sec.apps.push({ id: uid(), emoji, label, url });
-  } else {
-    const title = document.getElementById('f-sec-title').value.trim();
-    const emoji = document.getElementById('f-sec-emoji').value;
-    const type  = document.getElementById('f-sec-type').value;
-    if (!title) { alert('Por favor escribe el nombre de la sección.'); return; }
-    data.sections.push({ id: uid(), title, emoji, type, apps: [] });
-  }
-  saveData(data);
-  render();
-  closeModal();
-}
-
-// close modal on overlay click
-document.getElementById('modal-overlay').addEventListener('click', function(e){
-  if (e.target === this) closeModal();
-});
-
-// ── INIT ───────────────────────────────────────────────────────────
-render();
-</script>
+  </script>
 </body>
+
 </html>
